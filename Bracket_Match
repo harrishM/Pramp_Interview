@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+
+class Solution {
+  
+  static int bracketMatch(String text) {
+    // your code goes here
+    if(text.length() == 0 || text == null){
+      return 0;
+    }
+    
+    
+    Stack<Character> stack = new Stack<>();
+   
+    
+    for(char c : text.toCharArray()){
+      if(c == '('){
+        stack.push(c);
+        
+        
+      }
+      else if( !stack.isEmpty() && c == ')' && stack.peek() == '('){
+        stack.pop();
+       
+      }
+      else if(c == ')'){
+        stack.push(c);
+        
+      }
+     
+      
+      
+      
+    }
+    
+    return stack.size();
+    
+  }
+
+  public static void main(String[] args) {
+
+  }
+
+}
